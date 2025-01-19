@@ -3,7 +3,7 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 
   # Enable flakes:
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
