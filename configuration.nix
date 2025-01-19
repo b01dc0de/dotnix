@@ -20,6 +20,11 @@
   networking.hostName = lib.mkDefault "unnamed";
   networking.networkmanager.enable = true;
 
+  # Bluetooth:
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+
   # Timezone / Locale:
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -77,17 +82,21 @@
     configFile = ./i3/config;
     extraPackages = with pkgs; [
       dmenu
+      feh
       i3blocks
-      i3lock
       i3status
+      rofi
     ];
   };
+  programs.i3lock.enable = true;
+  programs.i3lock.package = pkgs.i3lock-blur;
 
   # Environment:
   environment.pathsToLink = [ "/libexec" ];
 
   # Fonts:
   fonts.enableDefaultPackages = true;
+  fonts.fontDir.enable = true;
   fonts.packages = with pkgs; [
     nerd-fonts.blex-mono
     nerd-fonts.fira-code
@@ -124,7 +133,12 @@
   # Pkgs:
   environment.systemPackages = with pkgs; [
     alacritty
+    catppuccin
     gitFull
     github-desktop
+    lxappearance
+    neovide
+    obsidian
+    spotify
   ];
 }
