@@ -58,12 +58,30 @@
   # GPU:
   hardware.graphics.enable = true;
 
+  # Default session:
+  services.displayManager.defaultSession = "none+i3";
+
   # X11:
   services.xserver.enable = true;
 
   # KDE Plasma:
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+
+  # i3:
+  services.xserver.windowManager.i3 = {
+    enable = true;
+    configFile = ./i3/config;
+    extraPackages = with pkgs; [
+      dmenu
+      i3blocks
+      i3lock
+      i3status
+    ];
+  };
+
+  # Environment:
+  environment.pathsToLink = [ "/libexec" ];
 
   # Users:
   users.users.cka = {
