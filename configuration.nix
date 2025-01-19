@@ -55,6 +55,9 @@
     jack.enable = true;
   };
 
+  # Polkit:
+  security.polkit.enable = true;
+
   # GPU:
   hardware.graphics.enable = true;
 
@@ -82,6 +85,21 @@
 
   # Environment:
   environment.pathsToLink = [ "/libexec" ];
+
+  # Fonts:
+  fonts.enableDefaultPackages = true;
+  fonts.packages = with pkgs; [
+    nerd-fonts.blex-mono
+    nerd-fonts.fira-code
+    nerd-fonts.hack
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.sauce-code-pro
+    nerd-fonts.symbols-only
+    nerd-fonts.terminess-ttf
+    nerd-fonts.ubuntu
+    nerd-fonts.ubuntu-mono
+    nerd-fonts.ubuntu-sans
+  ];
 
   # Users:
   users.users.cka = {
