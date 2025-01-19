@@ -11,7 +11,7 @@
     nixosConfigurations.nous = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
+        ./hosts/nous
 	home-manager.nixosModules.home-manager
 	{
 	  home-manager.useGlobalPkgs = true;

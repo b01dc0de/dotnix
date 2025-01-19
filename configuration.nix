@@ -1,8 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
-
   system.stateVersion = "25.05";
 
   # Enable flakes:
@@ -18,7 +16,7 @@
   boot.loader.grub.useOSProber = true;
 
   # Networking:
-  networking.hostName = "nous"; # Define your hostname.
+  networking.hostName = lib.mkDefault "unnamed";
   networking.networkmanager.enable = true;
 
   # Timezone / Locale:
