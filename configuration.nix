@@ -15,6 +15,7 @@
   boot.loader.grub.configurationLimit = 16;
   boot.loader.grub.default = "saved";
   boot.loader.grub.useOSProber = true;
+  boot.loader.grub.theme = "${pkgs.catppuccin-grub}";
 
   # Networking:
   networking.hostName = lib.mkDefault "unnamed";
@@ -81,6 +82,7 @@
     enable = true;
     configFile = ./i3/config;
     extraPackages = with pkgs; [
+      autotiling
       dmenu
       feh
       i3blocks
@@ -140,5 +142,6 @@
     neovide
     obsidian
     spotify
+    xclip
   ];
 }
