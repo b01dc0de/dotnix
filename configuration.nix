@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
+  # Define NixOS version:
   system.stateVersion = "25.05";
 
   # Enable flakes:
@@ -53,6 +54,9 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
+  # GPU:
+  hardware.graphics.enable = true;
 
   # X11:
   services.xserver.enable = true;
