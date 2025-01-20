@@ -83,10 +83,11 @@
     configFile = ./i3/config;
     extraPackages = with pkgs; [
       autotiling
-      dmenu
+      dex
       feh
       i3blocks
       i3status
+      picom
       rofi
     ];
   };
