@@ -75,6 +75,7 @@
 
   # KDE Plasma:
   services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.theme = "${pkgs.catppuccin-sddm}/share/sddm/themes/catppuccin-mocha";
   services.desktopManager.plasma6.enable = true;
 
   # i3:
