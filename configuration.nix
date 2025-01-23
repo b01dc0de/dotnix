@@ -85,6 +85,7 @@
     extraPackages = with pkgs; [
       autotiling
       dex
+      dunst
       feh
       i3blocks
       i3status
@@ -133,11 +134,14 @@
   programs.neovim.defaultEditor = true;
   programs.neovim.viAlias = true;
   programs.neovim.vimAlias = true;
+  programs.nh.enable = true;
 
   # Pkgs:
   environment.systemPackages = with pkgs; [
     alacritty
     catppuccin
+    fastfetch
+    efibootmgr
     gitFull
     github-desktop
     lxappearance
