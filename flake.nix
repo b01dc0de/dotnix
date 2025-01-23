@@ -8,6 +8,19 @@
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+    nixosConfigurations.canon = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/canon
+	home-manager.nixosModules.home-manager
+	{
+	  home-manager.useGlobalPkgs = true;
+	  home-manager.useUserPackages = true;
+	  home-manager.users.cka = import ./home.nix;
+	  home-manager.backupFileExtension = "hm-backup";
+	}
+      ];
+    };
     nixosConfigurations.nous = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
