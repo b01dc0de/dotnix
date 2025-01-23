@@ -21,5 +21,18 @@
 	}
       ];
     };
+    nixosConfigurations.primus = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/primus
+	home-manager.nixosModules.home-manager
+	{
+	  home-manager.useGlobalPkgs = true;
+	  home-manager.useUserPackages = true;
+	  home-manager.users.cka = import ./home.nix;
+	  home-manager.backupFileExtension = "hm-backup";
+	}
+      ];
+    };
   };
 }
