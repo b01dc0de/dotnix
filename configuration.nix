@@ -149,6 +149,7 @@
     obsidian
     spotify
     vivaldi
+    vscode-fhs
     xclip
   ];
 }
