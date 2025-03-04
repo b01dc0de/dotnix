@@ -15,6 +15,9 @@
   boot.loader.grub.configurationLimit = 16;
   boot.loader.grub.default = "saved";
   boot.loader.grub.useOSProber = true;
+  # NOTE: If grub.theme is set, that isn't affected by grub.font, etc.
+  #boot.loader.grub.fontSize = 24;
+  #boot.loader.grub.font = "${pkgs.nerd-fonts.hack}/share/fonts/truetype/NerdFonts/Hack/HackNerdFont-Regular.ttf";
   boot.loader.grub.theme = "${pkgs.catppuccin-grub}";
 
   # Networking:
