@@ -148,6 +148,7 @@
     neovide
     obsidian
     spotify
+    vivaldi
     xclip
   ];
 }
