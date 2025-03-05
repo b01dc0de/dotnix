@@ -11,6 +11,17 @@
         hash = "sha256-IqBooFkxc4cOXC9Ufenp+SvtfHDautTyOdg+Q20tZ6w=";
     };
 
+    programs.bash = {
+    	enable = true;
+	enableCompletion = true;
+	bashrcExtra = "eval \"$(direnv hook bash)\"";
+	initExtra = "fastfetch";
+    };
+    programs.direnv = {
+    	enable = true;
+	enableBashIntegration = true;
+	nix-direnv.enable = true;
+    };
 
 
     xresources.properties = {

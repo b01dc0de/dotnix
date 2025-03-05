@@ -81,6 +81,11 @@
   services.displayManager.sddm.theme = "${pkgs.catppuccin-sddm}/share/sddm/themes/catppuccin-mocha";
   services.desktopManager.plasma6.enable = true;
 
+  # Elementary:
+  #services.xserver.desktopManager.pantheon.enable = true;
+  #services.xserver.displayManager.lightdm.greeters.pantheon.enable = true;
+  #services.xserver.displayManager.lightdm.enable = true;
+
   # i3:
   services.xserver.windowManager.i3 = {
     enable = true;
