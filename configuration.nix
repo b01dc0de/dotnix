@@ -82,9 +82,9 @@
   services.desktopManager.plasma6.enable = true;
 
   # Elementary:
-  #services.xserver.desktopManager.pantheon.enable = true;
-  #services.xserver.displayManager.lightdm.greeters.pantheon.enable = true;
-  #services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.pantheon.enable = true;
+  services.xserver.displayManager.lightdm.greeters.pantheon.enable = false;
+  services.xserver.displayManager.lightdm.enable = false;
 
   # i3:
   services.xserver.windowManager.i3 = {
