@@ -81,11 +81,6 @@
   services.displayManager.sddm.theme = "${pkgs.catppuccin-sddm}/share/sddm/themes/catppuccin-mocha";
   services.desktopManager.plasma6.enable = true;
 
-  # Elementary:
-  services.xserver.desktopManager.pantheon.enable = true;
-  services.xserver.displayManager.lightdm.greeters.pantheon.enable = false;
-  services.xserver.displayManager.lightdm.enable = false;
-
   # i3:
   services.xserver.windowManager.i3 = {
     enable = true;
@@ -147,6 +142,7 @@
   # Pkgs:
   environment.systemPackages = with pkgs; [
     alacritty
+    busybox
     catppuccin
     fastfetch
     efibootmgr
@@ -159,5 +155,8 @@
     vivaldi
     vscode-fhs
     xclip
+
+    # Development-related:
+    libclang
   ];
 }
