@@ -55,7 +55,7 @@
 	{
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
-	  home-manager.users.cka = import ./home.nix;
+	  home-manager.users.cka = import ./hosts/primus/home.nix;
 	  home-manager.backupFileExtension = "hm-backup";
 	}
       ];
