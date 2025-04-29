@@ -6,7 +6,7 @@
 	../../configuration.nix
     ];
 
-    networking.hostName = lib.mkForce "nous";
+    networking.hostName = lib.mkForce "thenous";
 
     # Nvidia:
     services.xserver.videoDrivers = [ "nvidia" ];

@@ -34,19 +34,6 @@
 	}
       ];
     };
-    nixosConfigurations.nous = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/nous
-	home-manager.nixosModules.home-manager
-	{
-	  home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
-	  home-manager.users.cka = import ./home.nix;
-	  home-manager.backupFileExtension = "hm-backup";
-	}
-      ];
-    };
     nixosConfigurations.primus = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -56,6 +43,19 @@
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
 	  home-manager.users.cka = import ./hosts/primus/home.nix;
+	  home-manager.backupFileExtension = "hm-backup";
+	}
+      ];
+    };
+    nixosConfigurations.thenous = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/thenous
+	home-manager.nixosModules.home-manager
+	{
+	  home-manager.useGlobalPkgs = true;
+	  home-manager.useUserPackages = true;
+	  home-manager.users.cka = import ./home.nix;
 	  home-manager.backupFileExtension = "hm-backup";
 	}
       ];
