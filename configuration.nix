@@ -144,6 +144,7 @@
     alacritty
     busybox
     catppuccin
+    chromium
     fastfetch
     efibootmgr
     gitFull
