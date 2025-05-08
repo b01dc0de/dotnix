@@ -49,6 +49,8 @@
     layout = "us";
     variant = "";
   };
+  # libinput:
+  services.libinput.mouse.disableWhileTyping = true;
 
   # Printing support:
   services.printing.enable = true;
