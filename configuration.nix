@@ -2,7 +2,7 @@
 
 {
   # Define NixOS version:
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 
   # Enable flakes:
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
