@@ -73,7 +73,7 @@
   hardware.graphics.enable = true;
 
   # Default session:
-  services.displayManager.defaultSession = "none+i3";
+  #services.displayManager.defaultSession = "none+i3";
 
   # X11:
   services.xserver.enable = true;
@@ -155,7 +155,6 @@
     neovide
     obsidian
     spotify
-    vivaldi
     vscode-fhs
     xclip
 
