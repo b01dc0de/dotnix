@@ -101,7 +101,7 @@
   programs.i3lock.enable = true;
   programs.i3lock.package = pkgs.i3lock-blur;
 
-  # Hyprland
+  # Hyprland:
   programs.hyprland.enable = true;
   programs.hyprland.withUWSM = true;
   #services.hypridle.enable = true;

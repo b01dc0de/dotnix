@@ -11,6 +11,12 @@
         hash = "sha256-IqBooFkxc4cOXC9Ufenp+SvtfHDautTyOdg+Q20tZ6w=";
     };
 
+    # Hyprland:
+    wayland.windowManager.hyprland = {
+        enable = true;
+        extraConfig = "source = ~/dotnix/hypr/hyprland.conf";
+    };
+
     programs.bash = {
     	enable = true;
 	enableCompletion = true;
