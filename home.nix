@@ -11,12 +11,6 @@
         hash = "sha256-IqBooFkxc4cOXC9Ufenp+SvtfHDautTyOdg+Q20tZ6w=";
     };
 
-    # Hyprland:
-    wayland.windowManager.hyprland = {
-        enable = true;
-        extraConfig = "source = ~/dotnix/hypr/hyprland.conf";
-    };
-
     programs.bash = {
     	enable = true;
 	enableCompletion = true;
@@ -29,6 +23,12 @@
 	nix-direnv.enable = true;
     };
 
+    # Hyprland:
+    wayland.windowManager.hyprland = {
+        enable = true;
+        extraConfig = "source = ~/dotnix/hypr/hyprland.conf";
+    };
+
     # Kitty:
     programs.kitty = {
         enable = true;
@@ -39,8 +39,8 @@
 	settings = {
             dynamic_background_opacity = true;
             enable_audio_bell = false;
-            background_opacity = "0.8";
-            background_blur = 5;
+            background_opacity = "0.9";
+            background_blur = 1;
 	};
 	themeFile = "Catppuccin-Mocha";
     };
