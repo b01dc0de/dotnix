@@ -64,6 +64,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+    wireplumber.enable = true;
   };
 
   # Polkit:
@@ -166,12 +167,15 @@
     efibootmgr
     gitFull
     github-desktop
-    kitty # Used by default Hyprland config
+    hyprpaper
+    hyprpolkitagent
+    hyprsunset
     lxappearance
     neovide
     obsidian
     spotify
     vscode-fhs
+    waybar
     xclip
 
     # Development-related:
