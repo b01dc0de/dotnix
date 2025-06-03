@@ -2,7 +2,7 @@
 
 {
     programs.home-manager.enable = true;
-    home.stateVersion = "25.05";
+    home.stateVersion = "25.11";
     home.username = "cka";
     home.homeDirectory = "/home/cka";
 
@@ -29,6 +29,21 @@
 	nix-direnv.enable = true;
     };
 
+    # Kitty:
+    programs.kitty = {
+        enable = true;
+	font = {
+	    name = "JetBrainsMono Nerd Font Mono";
+	    size = 16;
+	};
+	settings = {
+            dynamic_background_opacity = true;
+            enable_audio_bell = false;
+            background_opacity = "0.8";
+            background_blur = 5;
+	};
+	themeFile = "Catppuccin-Mocha";
+    };
 
     xresources.properties = {
         "Xft.dpi" = 144;

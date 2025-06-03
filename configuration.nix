@@ -119,6 +119,18 @@
 
   # Environment:
   environment.pathsToLink = [ "/libexec" ];
+  environment.variables = rec {
+    NIXCFG = "$HOME/dotnix";
+    FLAKE = "${NIXCFG}";
+    # XDG Base Directory spec:
+    XDG_CACHE_HOME = "$HOME/.cache";
+    XDG_CONFIG_HOME = "$HOME/.config";
+    XDG_DATA_HOME = "$HOME/.local/share";
+    XDG_STATE_HOME = "$HOME/.local/state";
+    # Not in XDG spec:
+    XDG_BIN_HOME = "$HOME/.local/bin";
+    PATH = [ "${XDG_BIN_HOME}" ];
+  };
 
   # Fonts:
   fonts.enableDefaultPackages = true;
@@ -151,11 +163,15 @@
 
   # Program configuration:
   programs.firefox.enable = true;
-  programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
-  programs.neovim.viAlias = true;
-  programs.neovim.vimAlias = true;
   programs.nh.enable = true;
+
+  # Neovim:
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+  };
 
   # Pkgs:
   environment.systemPackages = with pkgs; [
@@ -163,19 +179,29 @@
     busybox
     catppuccin
     chromium
+    curl
+    discord
+    emacs
     fastfetch
     efibootmgr
+    galculator
+    gimp
     gitFull
     github-desktop
     hyprpaper
     hyprpolkitagent
     hyprsunset
+    kitty
+    libreoffice-fresh
     lxappearance
     neovide
     obsidian
+    pavucontrol
+    playerctl
     spotify
     vscode-fhs
     waybar
+    wget
     xclip
 
     # Development-related:

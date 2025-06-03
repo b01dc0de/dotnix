@@ -8,57 +8,47 @@
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations.canon = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/canon
-	home-manager.nixosModules.home-manager
-	{
-	  home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
-	  home-manager.users.cka = import ./home.nix;
-	  home-manager.backupFileExtension = "hm-backup";
-	}
-      ];
-    };
-    nixosConfigurations.ether = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/ether
-	home-manager.nixosModules.home-manager
-	{
-	  home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
-	  home-manager.users.cka = import ./home.nix;
-	  home-manager.backupFileExtension = "hm-backup";
-	}
-      ];
-    };
-    nixosConfigurations.primus = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/primus
-	home-manager.nixosModules.home-manager
-	{
-	  home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
-	  home-manager.users.cka = import ./hosts/primus/home.nix;
-	  home-manager.backupFileExtension = "hm-backup";
-	}
-      ];
-    };
-    nixosConfigurations.thenous = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/thenous
-	home-manager.nixosModules.home-manager
-	{
-	  home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
-	  home-manager.users.cka = import ./home.nix;
-	  home-manager.backupFileExtension = "hm-backup";
-	}
-      ];
+    nixosConfigurations =
+    let
+      default = rec {
+        system = "x86_64-linux";
+        modules = [
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.cka = import ./home.nix;
+            home-manager.backupFileExtension = "hm-backup";
+          }
+        ];
+      };
+    in
+    {
+      canon = nixpkgs.lib.nixosSystem {
+        system = default.system;
+        modules = [ ./hosts/canon ] ++ default.modules;
+      };
+      ether = nixpkgs.lib.nixosSystem {
+        system = default.system;
+        modules = [ ./hosts/ether ] ++ default.modules;
+      };
+      primus = nixpkgs.lib.nixosSystem {
+        system = default.system;
+        modules = [
+          ./hosts/primus
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.cka = import ./hosts/primus/home.nix;
+            home-manager.backupFileExtension = "hm-backup";
+          }
+        ];
+      };
+      thenous = nixpkgs.lib.nixosSystem {
+        system = default.system;
+        modules = [ ./hosts/thenous ] ++ default.modules;
+      };
     };
   };
 }
