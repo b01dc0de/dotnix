@@ -101,6 +101,21 @@
   programs.i3lock.enable = true;
   programs.i3lock.package = pkgs.i3lock-blur;
 
+  # Hyprland
+  programs.hyprland.enable = true;
+  programs.hyprland.withUWSM = true;
+  #services.hypridle.enable = true;
+  #programs.hyprlock.enable = true;
+  programs.uwsm.enable = true;
+  programs.uwsm.waylandCompositors = {
+    # Using example config from nixos options:
+    hyprland = {
+      prettyName = "Hyprland";
+      comment = "Hyprland compositor managed by UWSM";
+      binPath = "/run/current-system/sw/bin/Hyprland";
+    };
+  };
+
   # Environment:
   environment.pathsToLink = [ "/libexec" ];
 
@@ -151,6 +166,7 @@
     efibootmgr
     gitFull
     github-desktop
+    kitty # Used by default Hyprland config
     lxappearance
     neovide
     obsidian
