@@ -81,6 +81,10 @@ window#waybar {
     color: @green;
 }
 
+#memory {
+    color: @yellow;
+}
+
 #pulseaudio {
     color: @blue;
 }
