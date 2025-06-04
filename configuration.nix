@@ -48,7 +48,9 @@
   services.xserver.xkb = {
     layout = "us";
     variant = "";
+    options = "ctrl:swapcaps";
   };
+  console.useXkbConfig = true;
   # libinput:
   services.libinput.mouse.disableWhileTyping = true;
 
