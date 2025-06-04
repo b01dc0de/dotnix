@@ -59,9 +59,10 @@
         enable = true;
 	extraConfig = lib.fileContents ./nvim/init.vim;
 	plugins = with pkgs.vimPlugins; [
-	    nvim-lspconfig
+	    catppuccin-nvim
 	    lualine-nvim
 	    nord-vim
+	    nvim-lspconfig
 	    nvim-treesitter.withAllGrammars
 	    telescope-nvim
 	];

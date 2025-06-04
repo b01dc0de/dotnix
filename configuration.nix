@@ -204,15 +204,19 @@
 
   # Pkgs:
   environment.systemPackages = with pkgs; [
+    arc-theme
+    arc-icon-theme
     alacritty
     busybox
     catppuccin
+    catppuccin-cursors
     chromium
     cliphist
     curl
     discord
     emacs
     fastfetch
+    floorp
     efibootmgr
     galculator
     gimp
