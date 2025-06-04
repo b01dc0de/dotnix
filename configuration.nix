@@ -136,20 +136,30 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Fonts:
-  fonts.enableDefaultPackages = true;
-  fonts.fontDir.enable = true;
-  fonts.packages = with pkgs; [
-    nerd-fonts.blex-mono
-    nerd-fonts.fira-code
-    nerd-fonts.hack
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.sauce-code-pro
-    nerd-fonts.symbols-only
-    nerd-fonts.terminess-ttf
-    nerd-fonts.ubuntu
-    nerd-fonts.ubuntu-mono
-    nerd-fonts.ubuntu-sans
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = [ "Noto Serif" "DejaVu Serif" ];
+	sansSerif = [ "Noto Sans" "DejaVu Sans" ];
+	monospace = [ "Hack" "DejaVu Sans Mono" ];
+      };
+    };
+    fontDir.enable = true;
+    packages = with pkgs; [
+      nerd-fonts.blex-mono
+      nerd-fonts.fira-code
+      nerd-fonts.hack
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.sauce-code-pro
+      nerd-fonts.symbols-only
+      nerd-fonts.terminess-ttf
+      nerd-fonts.ubuntu
+      nerd-fonts.ubuntu-mono
+      nerd-fonts.ubuntu-sans
+    ];
+  };
 
   # Users:
   users.users.cka = {
