@@ -11,11 +11,17 @@
         hash = "sha256-IqBooFkxc4cOXC9Ufenp+SvtfHDautTyOdg+Q20tZ6w=";
     };
 
+    xresources.properties = {
+        "Xft.dpi" = 144;
+    };
+
+    home.packages = with pkgs; [ ];
+
     programs.bash = {
     	enable = true;
 	enableCompletion = true;
 	bashrcExtra = "eval \"$(direnv hook bash)\"";
-	initExtra = "fastfetch";
+	initExtra = ''fastfetch'';
     };
     programs.direnv = {
     	enable = true;
@@ -45,10 +51,10 @@
 	themeFile = "Catppuccin-Mocha";
     };
 
-    xresources.properties = {
-        "Xft.dpi" = 144;
+    # Oh-my-posh:
+    programs.oh-my-posh = {
+	enable = true;
+        enableBashIntegration = true;
+	useTheme = "catppuccin";
     };
-
-    home.packages = with pkgs; [
-    ];
 }
