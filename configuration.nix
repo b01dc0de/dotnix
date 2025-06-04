@@ -48,7 +48,7 @@
   services.xserver.xkb = {
     layout = "us";
     variant = "";
-    options = "ctrl:swapcaps";
+    options = "ctrl:nocaps";
   };
   console.useXkbConfig = true;
   # libinput:
@@ -133,6 +133,7 @@
     XDG_BIN_HOME = "$HOME/.local/bin";
     PATH = [ "${XDG_BIN_HOME}" ];
   };
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Fonts:
   fonts.enableDefaultPackages = true;
@@ -173,6 +174,16 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+  };
+
+  # Chromium:
+  programs.chromium = {
+    enable = true;
+    extensions = [
+      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+      "ddkjiahejlhfcafbddmgiahcphecmpfh" # uBlock Origin Lite
+      "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
+    ];
   };
 
   # Pkgs:
