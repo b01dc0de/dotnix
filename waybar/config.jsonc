@@ -15,8 +15,8 @@
 //      "idle_inhibitor",
         "pulseaudio",
         "network",
-//      "power-profiles-daemon",
-//      "cpu",
+        "power-profiles-daemon",
+        "cpu",
         "memory",
         "temperature",
 //      "backlight",
@@ -67,7 +67,8 @@
         "spacing": 10
     },
     "clock": {
-	"format": "{:%a%e %B %I:%M %p}"
+	"format": "{:%a%e %B %I:%M %p}",
+        "tooltip": false
     },
     "cpu": {
         "format": "{usage}% ",
@@ -123,10 +124,8 @@
     },
     "pulseaudio": {
         "scroll-step": 2,
-        "format": "{volume}%{icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        //"format": "{volume}%{icon} {format_source}",
+        "format": "{volume}",
         "format-source": "{volume}%",
         "format-source-muted": "",
         "format-icons": {

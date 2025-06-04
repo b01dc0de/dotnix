@@ -7,6 +7,10 @@
   # Enable flakes:
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Enable automatic garbage collection:
+  nix.optimise.automatic = true;
+  nix.settings.auto-optimise-store = true;
+
   # Bootloader:
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.enable = true;
@@ -74,6 +78,7 @@
 
   # GPU:
   hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
 
   # Default session:
   #services.displayManager.defaultSession = "none+i3";
@@ -107,6 +112,7 @@
   # Hyprland:
   programs.hyprland.enable = true;
   programs.hyprland.withUWSM = true;
+  programs.hyprland.xwayland.enable = true;
   #services.hypridle.enable = true;
   #programs.hyprlock.enable = true;
   programs.uwsm.enable = true;
@@ -178,14 +184,6 @@
   programs.firefox.enable = true;
   programs.nh.enable = true;
 
-  # Neovim:
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-  };
-
   # Chromium:
   programs.chromium = {
     enable = true;
@@ -196,12 +194,21 @@
     ];
   };
 
+  # Neovim:
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+  };
+
   # Pkgs:
   environment.systemPackages = with pkgs; [
     alacritty
     busybox
     catppuccin
     chromium
+    cliphist
     curl
     discord
     emacs
@@ -224,6 +231,7 @@
     spotify
     vscode-fhs
     waybar
+    wl-clipboard
     wget
     xclip
 
