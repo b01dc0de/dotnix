@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
     programs.home-manager.enable = true;
@@ -17,12 +17,15 @@
 
     home.packages = with pkgs; [ ];
 
+    # Bash:
     programs.bash = {
     	enable = true;
 	enableCompletion = true;
 	bashrcExtra = "eval \"$(direnv hook bash)\"";
 	initExtra = ''fastfetch'';
     };
+
+    # Direnv:
     programs.direnv = {
     	enable = true;
 	enableBashIntegration = true;
@@ -49,6 +52,22 @@
             background_blur = 1;
 	};
 	themeFile = "Catppuccin-Mocha";
+    };
+
+    # Neovim:
+    programs.neovim = {
+        enable = true;
+	extraConfig = lib.fileContents ./nvim/init.vim;
+	plugins = with pkgs.vimPlugins; [
+	    nvim-lspconfig
+	    lualine-nvim
+	    nord-vim
+	    nvim-treesitter.withAllGrammars
+	    telescope-nvim
+	];
+	viAlias = true;
+	vimAlias = true;
+	vimdiffAlias = true;
     };
 
     # Oh-my-posh:
