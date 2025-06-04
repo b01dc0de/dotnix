@@ -94,7 +94,7 @@
   # i3:
   services.xserver.windowManager.i3 = {
     enable = true;
-    configFile = ./i3/config;
+    configFile = ./cfg/i3/config;
     extraPackages = with pkgs; [
       autotiling
       dex
@@ -147,13 +147,14 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "Noto Serif" "DejaVu Serif" ];
-	sansSerif = [ "Noto Sans" "DejaVu Sans" ];
-	monospace = [ "Hack" "DejaVu Sans Mono" ];
+        serif = [ "Ubuntu Nerd Font" "Noto Serif" "DejaVu Serif" ];
+	sansSerif = [ "UbuntuSans Nerd Font" "Noto Sans" "DejaVu Sans" ];
+	monospace = [ "JetBrainsMono Nerd Font Mono" "Hack Nerd Font" "Hack" "DejaVu Sans Mono" ];
       };
     };
     fontDir.enable = true;
     packages = with pkgs; [
+      oxygenfonts
       nerd-fonts.blex-mono
       nerd-fonts.fira-code
       nerd-fonts.hack
@@ -187,6 +188,11 @@
   # Chromium:
   programs.chromium = {
     enable = true;
+    extraOpts = {
+      "BrowserSignin" = 0;
+      "SyncDisabled" = true;
+      "PasswordManagerEnabled" = false;
+    };
     extensions = [
       "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
       "ddkjiahejlhfcafbddmgiahcphecmpfh" # uBlock Origin Lite
@@ -204,9 +210,9 @@
 
   # Pkgs:
   environment.systemPackages = with pkgs; [
+    alacritty
     arc-theme
     arc-icon-theme
-    alacritty
     busybox
     catppuccin
     catppuccin-cursors
@@ -214,6 +220,8 @@
     cliphist
     curl
     discord
+    dracula-theme
+    dracula-icon-theme
     emacs
     fastfetch
     floorp
@@ -232,7 +240,12 @@
     obsidian
     pavucontrol
     playerctl
+    power-profiles-daemon
+    python3
+    qogir-theme
+    qogir-icon-theme
     spotify
+    tmux
     vscode-fhs
     waybar
     wl-clipboard

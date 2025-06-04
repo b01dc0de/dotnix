@@ -189,7 +189,7 @@ client.background        $base
 bar {
     position top
     font pango:Ubuntu Bold 12
-    status_command i3blocks -c ~/dotnix/i3/i3blocks.conf
+    status_command i3blocks -c ~/dotnix/cfg/i3/i3blocks.conf
     colors {
         background         $base
         statusline         $text

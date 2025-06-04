@@ -138,7 +138,7 @@
         "format" : "⏻ ",
 		"tooltip": false,
 		"menu": "on-click",
-		"menu-file": "$HOME/dotnix/waybar/power_menu.xml",
+		"menu-file": "$HOME/dotnix/cfg/waybar/power_menu.xml",
 		"menu-actions": {
 			"shutdown": "shutdown now",
 			"reboot": "reboot",

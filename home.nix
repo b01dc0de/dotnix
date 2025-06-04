@@ -35,7 +35,7 @@
     # Hyprland:
     wayland.windowManager.hyprland = {
         enable = true;
-        extraConfig = "source = ~/dotnix/hypr/hyprland.conf";
+        extraConfig = lib.fileContents ./cfg/hypr/hyprland.conf;
     };
 
     # Kitty:
@@ -57,7 +57,7 @@
     # Neovim:
     programs.neovim = {
         enable = true;
-	extraConfig = lib.fileContents ./nvim/init.vim;
+	extraConfig = lib.fileContents ./cfg/nvim/init.vim;
 	plugins = with pkgs.vimPlugins; [
 	    catppuccin-nvim
 	    lualine-nvim
