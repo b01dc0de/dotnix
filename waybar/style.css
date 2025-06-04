@@ -48,6 +48,26 @@ window#waybar {
     color: @text;
 }
 
+#workspaces {
+    background-color: @surface1;
+    color: @text;
+}
+#workspaces button {
+    padding: 0 5px;
+    background-color: @surface0;
+    color: @text;
+}
+
+#workspaces button.focused {
+    background-color: @surface2;
+    color: @peach;
+}
+
+#workspaces button.urgent {
+    background-color: @maroon;
+    color: @surface0;
+}
+
 #tooltip {
     background: @overlay0;
     color: @subtext0;
