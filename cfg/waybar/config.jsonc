@@ -78,7 +78,8 @@
         "format": "{}% "
     },
     "temperature": {
-        "format": "{temperatureC}°C"
+        "format": "{temperatureC}°C",
+        "tooltip": false
     },
     "backlight": {
         // "device": "acpi_video1",

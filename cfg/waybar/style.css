@@ -58,7 +58,7 @@ window#waybar {
     color: @text;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     background-color: @surface2;
     color: @peach;
 }

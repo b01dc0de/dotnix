@@ -29,4 +29,5 @@ set autochdir
 set ttyfast
 set noswapfile
 
-set wildmode=longest, list
+set wildmode=longest:full, list
+
