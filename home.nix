@@ -19,17 +19,20 @@
 
     # Bash:
     programs.bash = {
-    	enable = true;
-	enableCompletion = true;
-	bashrcExtra = "eval \"$(direnv hook bash)\"";
-	initExtra = ''fastfetch'';
+        bashrcExtra = "eval \"$(direnv hook bash)\"";
+        enable = true;
+        enableCompletion = true;
+        initExtra = ''fastfetch'';
+        shellAliases = {
+            ls = "ls -la";
+        };
     };
 
     # Direnv:
     programs.direnv = {
-    	enable = true;
-	enableBashIntegration = true;
-	nix-direnv.enable = true;
+        enable = true;
+        enableBashIntegration = true;
+        nix-direnv.enable = true;
     };
 
     # Hyprland:
@@ -41,40 +44,40 @@
     # Kitty:
     programs.kitty = {
         enable = true;
-	font = {
-	    name = "JetBrainsMono Nerd Font Mono";
-	    size = 16;
-	};
-	settings = {
+        font = {
+            name = "JetBrainsMono Nerd Font Mono";
+            size = 16;
+        };
+        settings = {
             dynamic_background_opacity = true;
             enable_audio_bell = false;
             background_opacity = "0.9";
             background_blur = 1;
-	};
-	themeFile = "Catppuccin-Mocha";
+        };
+        themeFile = "Catppuccin-Mocha";
     };
 
     # Neovim:
     programs.neovim = {
         enable = true;
-	extraConfig = lib.fileContents ./cfg/nvim/init.vim;
-	plugins = with pkgs.vimPlugins; [
-	    catppuccin-nvim
-	    lualine-nvim
-	    nord-vim
-	    nvim-lspconfig
-	    nvim-treesitter.withAllGrammars
-	    telescope-nvim
-	];
-	viAlias = true;
-	vimAlias = true;
-	vimdiffAlias = true;
+        extraConfig = lib.fileContents ./cfg/nvim/init.vim;
+        plugins = with pkgs.vimPlugins; [
+            catppuccin-nvim
+                lualine-nvim
+                nord-vim
+                nvim-lspconfig
+                nvim-treesitter.withAllGrammars
+                telescope-nvim
+        ];
+        viAlias = true;
+        vimAlias = true;
+        vimdiffAlias = true;
     };
 
     # Oh-my-posh:
     programs.oh-my-posh = {
-	enable = true;
+        enable = true;
         enableBashIntegration = true;
-	useTheme = "catppuccin";
+        useTheme = "catppuccin";
     };
 }
