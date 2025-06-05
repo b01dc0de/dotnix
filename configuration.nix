@@ -114,8 +114,8 @@
     programs.hyprland.enable = true;
     programs.hyprland.withUWSM = true;
     programs.hyprland.xwayland.enable = true;
-    #services.hypridle.enable = true;
-    #programs.hyprlock.enable = true;
+    services.hypridle.enable = true;
+    programs.hyprlock.enable = true;
     programs.uwsm.enable = true;
     programs.uwsm.waylandCompositors = {
         # Using example config from nixos options:
@@ -238,6 +238,10 @@
         libreoffice-fresh
         lxappearance
         neovide
+        nwg-drawer
+        nwg-dock-hyprland
+        nwg-displays
+        nwg-look
         obsidian
         pavucontrol
         playerctl
@@ -252,6 +256,7 @@
         wl-clipboard
         wget
         xclip
+        xfce.mousepad
 
         # Development-related:
         clang-tools

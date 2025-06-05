@@ -24,7 +24,9 @@
         enableCompletion = true;
         initExtra = ''fastfetch'';
         shellAliases = {
-            ls = "ls -la";
+            ls = "ls --color=auto";
+            ll = "ls -l --color=auto";
+            la = "ls -la --color=auto";
         };
     };
 
