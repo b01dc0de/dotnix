@@ -14,5 +14,6 @@
 
     # Enable the Pantheon Desktop Environment.
     #services.xserver.displayManager.lightdm.enable = true;
-    services.xserver.desktopManager.pantheon.enable = true;
+    services.displayManager.defaultSession = lib.mkForce "pantheon";
+    services.xserver.desktopManager.pantheon.enable = lib.mkForce true;
 }
