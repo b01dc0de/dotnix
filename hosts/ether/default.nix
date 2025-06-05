@@ -3,7 +3,7 @@
 {
     imports = [
         ./hardware-configuration.nix
-	../../configuration.nix
+        ../../configuration.nix
     ];
 
     # Hostname:

@@ -73,8 +73,9 @@
         wireplumber.enable = true;
     };
 
-    # Polkit:
+    # Security / Auth:
     security.polkit.enable = true;
+    services.gnome.gnome-keyring.enable = true;
 
     # GPU:
     hardware.graphics.enable = true;

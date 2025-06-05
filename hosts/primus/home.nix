@@ -2,11 +2,11 @@
 
 {
     imports = [
-    	../../home.nix
+        ../../home.nix
     ];
 
     xresources.properties = lib.mkForce {
-    	"Xft.dpi" = 192;
+        "Xft.dpi" = 192;
     };
 
 }

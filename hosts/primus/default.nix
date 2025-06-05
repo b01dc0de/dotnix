@@ -3,8 +3,8 @@
 {
     imports = [
         ./hardware-configuration.nix
-	../../configuration.nix
-	../../nixosModules/games.nix
+        ../../configuration.nix
+        ../../nixosModules/games.nix
     ];
 
     # Hostname:

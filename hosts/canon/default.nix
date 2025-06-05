@@ -3,7 +3,7 @@
 {
     imports = [
         ./hardware-configuration.nix
-	../../configuration.nix
+        ../../configuration.nix
     ];
 
     # Hostname:
@@ -15,5 +15,4 @@
     # Enable the Pantheon Desktop Environment.
     #services.xserver.displayManager.lightdm.enable = true;
     services.xserver.desktopManager.pantheon.enable = true;
-
 }
