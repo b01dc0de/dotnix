@@ -1,6 +1,6 @@
 
 set $mod Mod4
-set $terminal alacritty
+set $terminal kitty
 
 font pango:Ubuntu Sans Nerd Font 12
 

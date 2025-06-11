@@ -65,11 +65,11 @@
         extraConfig = lib.fileContents ./cfg/nvim/init.vim;
         plugins = with pkgs.vimPlugins; [
             catppuccin-nvim
-                lualine-nvim
-                nord-vim
-                nvim-lspconfig
-                nvim-treesitter.withAllGrammars
-                telescope-nvim
+            lualine-nvim
+            nord-vim
+            nvim-lspconfig
+            nvim-treesitter.withAllGrammars
+            telescope-nvim
         ];
         viAlias = true;
         vimAlias = true;
