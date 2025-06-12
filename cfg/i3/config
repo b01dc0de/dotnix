@@ -31,9 +31,14 @@ tiling_drag modifier titlebar
 exec_always --no-startup-id picom -b
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id feh --bg-fill ~/wallpaper.jpg
+exec_always --no-startup-id dunst
 exec_always --no-startup-id autotiling
 
 bindsym $mod+Return exec $terminal
+set $browser0 firefox
+set $browser1 chromium
+bindsym $mod+w exec $browser0
+bindsym $mod+Shift+w exec $browser1
 
 # kill focused window
 bindsym $mod+q kill
@@ -66,9 +71,9 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # focus the parent container
 bindsym $mod+a focus parent

@@ -82,7 +82,7 @@
     hardware.graphics.enable32Bit = true;
 
     # Default session:
-    #services.displayManager.defaultSession = "none+i3";
+    #services.displayManager.defaultSession = lib.mkDefault "none+i3";
 
     # X11:
     services.xserver.enable = true;
@@ -184,7 +184,7 @@
 
     # Program configuration:
     programs.firefox.enable = true;
-    programs.nh.enable = true;
+    programs.nix-ld.enable = true;
 
     # Chromium:
     programs.chromium = {
@@ -209,6 +209,14 @@
         vimAlias = true;
     };
 
+    # NH:
+    programs.nh = {
+        enable = true;
+        clean.enable = true;
+        clean.extraArgs = "--keep-since 7d --keep 8";
+        flake = "~/dotnix";
+    };
+
     # Pkgs:
     environment.systemPackages = with pkgs; [
         alacritty
@@ -228,7 +236,7 @@
         floorp
         efibootmgr
         galculator
-        gimp
+        gimp3
         gitFull
         github-desktop
         hyprpaper
