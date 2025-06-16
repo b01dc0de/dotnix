@@ -21,4 +21,6 @@
         };
         open = false;
     };
+
+    hardware.trackpoint.emulateWheel = true;
 }

@@ -185,6 +185,7 @@
     # Program configuration:
     programs.firefox.enable = true;
     programs.nix-ld.enable = true;
+    programs.xwayland.enable = true;
 
     # Chromium:
     programs.chromium = {
