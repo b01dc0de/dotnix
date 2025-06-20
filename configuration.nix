@@ -56,6 +56,7 @@
     };
     console.useXkbConfig = true;
     # libinput:
+    services.libinput.enable = true;
     services.libinput.mouse.disableWhileTyping = true;
 
     # Printing support:
