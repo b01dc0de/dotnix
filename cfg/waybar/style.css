@@ -77,11 +77,19 @@ window#waybar {
     color: @flamingo;
 }
 
+#cpu {
+    color: @mauve;
+}
+
 #network {
     color: @green;
 }
 
 #memory {
+    color: @yellow;
+}
+
+#power-profiles-daemon {
     color: @yellow;
 }
 
@@ -92,3 +100,4 @@ window#waybar {
 #temperature {
     color: @red;
 }
+

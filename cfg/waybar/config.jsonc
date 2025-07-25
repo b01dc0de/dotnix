@@ -14,8 +14,8 @@
     "modules-right": [
 //      "idle_inhibitor",
         "pulseaudio",
-        "network",
         "power-profiles-daemon",
+        "network",
         "cpu",
         "memory",
         "temperature",
@@ -116,7 +116,7 @@
       }
     },
     "network": {
-        "format-wifi": "{essid}",
+        "format-wifi": "{essid}",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
