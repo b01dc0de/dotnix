@@ -235,7 +235,7 @@
         dracula-icon-theme
         emacs
         fastfetch
-        floorp
+        floorp-bin
         efibootmgr
         galculator
         gimp3
