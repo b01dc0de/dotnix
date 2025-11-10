@@ -15,12 +15,12 @@
 //      "idle_inhibitor",
         "pulseaudio",
         "power-profiles-daemon",
-        "network",
-        "cpu",
-        "memory",
-        "temperature",
+//      "network",
+//      "cpu",
+//      "memory",
+//      "temperature",
 //      "backlight",
-        "keyboard-state",
+//      "keyboard-state",
 //      "battery",
 //      "battery#bat2",
         "clock",
@@ -32,17 +32,11 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}: {icon}",
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
+        "format": "{name}"
+//      "format-icons": {
+//          "active": "",
+//          "default": ""
+//      }
     },
     "hyprland/window": {
         "separate-outputs": true
@@ -67,7 +61,8 @@
         "spacing": 10
     },
     "clock": {
-	"format": "{:%a%e %B %I:%M %p}",
+//      "format": "{:%a %e %B %I:%M %p}",
+        "format": "{:%I:%M%p}",
         "tooltip": false
     },
     "cpu": {
