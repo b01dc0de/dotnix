@@ -9,7 +9,7 @@
 	environment.systemPackages = with pkgs; [
 	    mangohud
 	    prismlauncher
-	    protonup
+	    protonup-ng
 	];
     };
 }
